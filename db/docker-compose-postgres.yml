@@ -1,0 +1,22 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: moye_postgres
+    restart: always
+    environment:
+      # 필수: 초기 슈퍼유저 비밀번호를 설정합니다.
+      POSTGRES_PASSWORD: "00000531"
+      # 선택: 슈퍼유저 이름을 지정합니다. (기본값은 "postgres")
+      POSTGRES_USER: "admin"
+      # 선택: 초기 생성할 데이터베이스 이름을 지정합니다.
+      POSTGRES_DB: "moye"
+    ports:
+      - "5432:5432"
+    volumes:
+      # 주의: 이 경로는 공식 문서에서 권장하는 경로입니다.
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:

@@ -1,0 +1,13 @@
+server_port: "8080"
+
+# PostgreSQL 설정 (관계형 데이터)
+db_host: "localhost"
+db_port: "5432"
+db_user: "admin"
+db_password: "00000531"
+db_name: "moye"
+
+# MongoDB 설정 (메시지 데이터 등 NoSQL)
+# MongoDB의 경우, root 계정과 데이터베이스 이름을 포함한 URI를 구성합니다.
+mongo_uri: "mongodb://admin:00000531@localhost:27017/moye_messages?authSource=admin"
+mongo_db: "moye_messages"
